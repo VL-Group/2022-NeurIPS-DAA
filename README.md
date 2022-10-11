@@ -1,2 +1,2 @@
-# NeurIPS2022-DAA
+# 2022-NeurIPS-DAA
 The code will be released soon!
