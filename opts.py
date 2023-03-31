@@ -41,6 +41,8 @@ def parse_opt():
                         help='Use max instead of sum in the rank loss.')
     parser.add_argument('--local_rank', default=0, type=int,
                         help='node rank for distributed training')
+    parser.add_argument('--world_size', default=4, type=int,
+                        help='the number of gpus for training.')
 
     # ------------------------- model setting -----------------------#
     parser.add_argument('--img_dim', default=2048, type=int,

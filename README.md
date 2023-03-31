@@ -6,7 +6,7 @@ PyTorch implementation for NeurIPS2022 paper of [**“A Differentiable Semantic 
 We recommended the following dependencies.
 
 * Python 3.8
-* [PyTorch](http://pytorch.org/) 1.9.0
+* [PyTorch](http://pytorch.org/) 1.10.0
 * [NumPy](http://www.numpy.org/) (>1.19.5)
 * [TensorBoard](https://github.com/TeamHG-Memex/tensorboard_logger)
 
@@ -39,15 +39,15 @@ Modify the **data_path**, **vocab_path**, **model_name**, **logger_name** in the
 For MSCOCO:
 
 ```bash
-(For SGR) python train.py --data_name coco_precomp --num_epochs 30 --lr_update 20 --module_name SGR --daa_weight 25
-(For SAF) python train.py --data_name coco_precomp --num_epochs 30 --lr_update 20 --module_name SAF --daa_weight 25
+(For SGR) python train.py --data_name coco_precomp --num_epochs 30 --learning_rate 0.00015 --lr_update 20 --world_size 4 --module_name SGR --daa_weight 25
+(For SAF) python train.py --data_name coco_precomp --num_epochs 30 --learning_rate 0.00015 --lr_update 20 --world_size 4 --module_name SAF --daa_weight 25
 ```
 
 For Flickr30K:
 
 ```bash
-(For SGR) python train.py --data_name f30k_precomp --num_epochs 40 --lr_update 30 --module_name SGR --daa_weight 10
-(For SAF) python train.py --data_name f30k_precomp --num_epochs 40 --lr_update 20 --module_name SAF --daa_weight 10
+(For SGR) python train.py --data_name f30k_precomp --num_epochs 40 --learning_rate 0.0006 --lr_update 30 --world_size 1 --module_name SGR --daa_weight 10
+(For SAF) python train.py --data_name f30k_precomp --num_epochs 40 --learning_rate 0.0006 --lr_update 20 --world_size 1 --module_name SAF --daa_weight 10
 ```
 
 ## Evaluation

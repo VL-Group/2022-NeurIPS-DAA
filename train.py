@@ -215,7 +215,7 @@ if __name__ == '__main__':
     __spec__ = "ModuleSpec(name='builtins', loader=<class '_frozen_importlib.BuiltinImporter'>)"
     opt = opts.parse_opt()
 
-    worldSize = 4
+    worldSize = opt.world_size
     opt.learning_rate *= worldSize
     print('\nDistribute config', opt)
     mp.spawn(main, (worldSize, opt), worldSize)
