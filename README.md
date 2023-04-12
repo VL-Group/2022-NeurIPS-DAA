@@ -1,5 +1,5 @@
 ## Introduction
-PyTorch implementation for NeurIPS2022 paper of [**“A Differentiable Semantic Metric Approximation in Probabilistic Embedding for Cross-Modal Retrieval”**](https://openreview.net/forum?id=-KPNRZ8i0ag).  It is built on top of the [SGRAF](https://github.com/Paranioar/SGRAF) in PyTorch. 
+PyTorch implementation for NeurIPS2022 paper of [**“A Differentiable Semantic Metric Approximation in Probabilistic Embedding for Cross-Modal Retrieval”**](https://proceedings.neurips.cc/paper_files/paper/2022/file/4e786a87e7ae249de2b1aeaf5d8fde82-Paper-Conference.pdf).  It is built on top of the [SGRAF](https://github.com/Paranioar/SGRAF) in PyTorch. 
 
 ![image](assets/Motivation.png)
 ## Requirements and Installation
@@ -78,7 +78,7 @@ If you found this code useful, please cite the following paper:
                Haonan Zhang and
                Gongfu Li},
   title     = {A Differentiable Semantic Metric Approximation in Probabilistic Embedding for Cross-Modal Retrieval},
-  Booktitle = {NeurIPS},
+  booktitle = {NeurIPS},
   year      = {2022}
 }
 ```
