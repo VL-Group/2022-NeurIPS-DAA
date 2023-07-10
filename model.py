@@ -419,7 +419,9 @@ def SCAN_attention(query, context, smooth, eps=1e-8):
 
 class Loss(nn.Module):
     """
-    Compute contrastive and DAA loss
+    Compute contrastive and DAA loss 
+    written by Hao Li
+    More details: https://github.com/VL-Group/2022-NeurIPS-DAA
     """
     def __init__(self, margin=0, max_violation=False, daa_weight=25):
         super(Loss, self).__init__()
