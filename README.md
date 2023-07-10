@@ -70,7 +70,7 @@ python evaluation.py
 PMRP is a metric to evaluate the diversity of model. More details could find in [PCME](https://arxiv.org/abs/2101.05068).
 
 ### Prepare annotations
-Before evalution, you should download the **captions_val2014.json** and **isntances_val2014.json** from [here](https://drive.google.com/drive/folders/16AQLWCDogM50pLMx0YFznmoFCAqiW8q8?usp=drive_link), or you can find them from [here](http://images.cocodataset.org/annotations/annotations_trainval2014.zip). 
+Before evalution, you should download the **captions_val2014.json** and **instances_val2014.json** from [here](https://drive.google.com/drive/folders/16AQLWCDogM50pLMx0YFznmoFCAqiW8q8?usp=drive_link), or you can find them from [here](http://images.cocodataset.org/annotations/annotations_trainval2014.zip). 
 
 Then put them in the path **pmrp_com/coco_ann**.
 
