@@ -65,6 +65,28 @@ To test on Flickr30K, pass `fold5=False` with a model trained using `--data_name
 python evaluation.py
 ```
 
+## How to compute PMRP score
+
+PMRP is a metric to evaluate the diversity of model. More details could find in [PCME](https://arxiv.org/abs/2101.05068).
+
+### Prepare annotations
+Before evalution, you should download the **captions_val2014.json** and **isntances_val2014.json** from [here](https://drive.google.com/drive/folders/16AQLWCDogM50pLMx0YFznmoFCAqiW8q8?usp=drive_link), or you can find them from [here](http://images.cocodataset.org/annotations/annotations_trainval2014.zip). 
+
+Then put them in the path **pmrp_com/coco_ann**.
+
+### Compute PMRP score
+
+To compute pmrp score on MSCOCO-1K, you can run:
+```bash
+python pmrp_evaluation.py --path1 ${SIM_MATRIX} --n_fold 5
+```
+
+To compute pmrp score on MSCOCO-5K, you can run:
+```bash
+python pmrp_evaluation.py --path1 ${SIM_MATRIX} --n_fold 0
+```
+
+```${SIM_MATRIX}``` is the **npy format file** similarity matrix with the **shape of (5000, 25000)** produced by the models. If you want to compute PMRP score of SGRAF (integration of SGR and SAF), add `--path2 ${SIM_MATRIX}` as the prediction of another model.
 
 ## Reference
 
