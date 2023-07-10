@@ -86,7 +86,7 @@ To compute pmrp score on MSCOCO-5K, you can run:
 python pmrp_evaluation.py --path1 ${SIM_MATRIX} --n_fold 0
 ```
 
-```${SIM_MATRIX}``` is the **npy format file** similarity matrix with the **shape of (5000, 25000)** produced by the models. If you want to compute PMRP score of SGRAF (integration of SGR and SAF), add `--path2 ${SIM_MATRIX}` as the prediction of another model.
+```${SIM_MATRIX}``` is the path of **npy format** similarity matrix with the **shape of (5000, 25000)** produced by the models. If you want to compute PMRP score of SGRAF (integration of SGR and SAF), add `--path2 ${SIM_MATRIX}` as the prediction of another model.
 
 ## Reference
 
