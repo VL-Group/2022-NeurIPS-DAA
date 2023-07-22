@@ -114,8 +114,11 @@ def main(path1=None, path2=None, data_cache=None, dataset_root='/home/lihao/data
         print('{} has been loaded.'.format(data_cache))
     else:
         matrix = construct_matrix(path1, path2)
-        data = get_dict(matrix, save_dir=save_dir, dataset_root=dataset_root, data_split='testall')
-        
+        txt_ids = []
+        for line in open('pmrp_com/coco_ann/testall_caption_ids.txt', 'rb'):
+            txt_ids.append(int(line.strip()))
+        data = get_dict(matrix, txt_ids, save_dir=save_dir, dataset_root=dataset_root, data_split='testall')
+    
     te_ids = np.load('pmrp_com/coco_ann/coco_test_ids.npy')
     
     if n_fold:

@@ -15,14 +15,11 @@ def construct_matrix(path1, path2=None):
     return matrix
 
 
-def get_dict(matrix, save_dir=None, dataset_root=None, data_split = 'testall'):
-    txt_ids, img_ids = [], []
+def get_dict(matrix, txt_ids, save_dir=None, dataset_root=None, data_split = 'testall'):
+    img_ids = []
 
     for line in open(os.path.join(dataset_root, '%s_ids.txt' % data_split), 'rb'):
         img_ids.append(int(line.strip()))
-
-    for line in open(os.path.join(dataset_root, '%s_caption_ids.txt' % data_split), 'rb'):
-        txt_ids.append(int(line.strip()))
 
     img_ids = np.array(img_ids)
     txt_ids = np.array(txt_ids)
