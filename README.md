@@ -161,9 +161,7 @@ We recommended the following dependencies.
 * [TensorBoard](https://github.com/TeamHG-Memex/tensorboard_logger)
 
 ## Pretrained model
-If you don't want to train from scratch, you can download the pretrained model from [here](https://drive.google.com/file/d/1hCiXyQBrYF7eP7JtNTaHQoqSZ18-mb2X/view?usp=sharing) (**SGR** for MS-COCO model), [here](https://drive.google.com/file/d/1o-Wch7pJMwOyf-RqEvsXgAUBhIO9fv8g/view?usp=sharing) (**SAF** for MS-COCO model), [here](https://drive.google.com/file/d/1Q0Ttw4yViWnupJA1whTAYGYHr-O56D4L/view?usp=sharing) (**SGR** for Flickr30K model) and [here](https://drive.google.com/file/d/1hvixWqDDCbkbBYK28dyZeEI6Nlc0qfAx/view?usp=sharing) (**SAF** for Flickr30K model). The performance of these pretrained models are as follows:
-
-![image](assets/Result-MSCOCO.png)
+If you don't want to train from scratch, you can download the pretrained model from [here](https://drive.google.com/file/d/1hCiXyQBrYF7eP7JtNTaHQoqSZ18-mb2X/view?usp=sharing) (**SGR** for MS-COCO model), [here](https://drive.google.com/file/d/1o-Wch7pJMwOyf-RqEvsXgAUBhIO9fv8g/view?usp=sharing) (**SAF** for MS-COCO model), [here](https://drive.google.com/file/d/1Q0Ttw4yViWnupJA1whTAYGYHr-O56D4L/view?usp=sharing) (**SGR** for Flickr30K model) and [here](https://drive.google.com/file/d/1hvixWqDDCbkbBYK28dyZeEI6Nlc0qfAx/view?usp=sharing) (**SAF** for Flickr30K model).
 
 ## Prepare data
 We follow [SCAN](https://github.com/kuanghuei/SCAN) to obtain image features and vocabularies, which can be downloaded by using:
