@@ -10,7 +10,7 @@ PyTorch implementation for NeurIPS2022 paper of [**“A Differentiable Semantic 
 <thead>
   <tr>
     <th class="tg-lboi" rowspan="2">Dataset</th>
-    <th class="tg-9wq8" rowspan="2">Model</th>
+    <th class="tg-9wq8" rowspan="2">Model (+DAA)</th>
     <th class="tg-pb0m" colspan="5">image-to-text</th>
     <th class="tg-pb0m" colspan="5">text-to-image</th>
   </tr>
