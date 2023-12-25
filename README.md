@@ -4,7 +4,7 @@ PyTorch implementation for NeurIPS2022 paper of [**“A Differentiable Semantic 
 
 ![image](assets/Motivation.png)
 
-#### The full experiment results
+### The full experiment results
 
 <table class="tg">
 <thead>
