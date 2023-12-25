@@ -1,6 +1,9 @@
 ## Introduction
 PyTorch implementation for NeurIPS2022 paper of [**“A Differentiable Semantic Metric Approximation in Probabilistic Embedding for Cross-Modal Retrieval”**](https://proceedings.neurips.cc/paper_files/paper/2022/file/4e786a87e7ae249de2b1aeaf5d8fde82-Paper-Conference.pdf).  It is built on top of the [SGRAF](https://github.com/Paranioar/SGRAF) in PyTorch. 
 
+
+![image](assets/Motivation.png)
+
 #### The full experiment results
 
 <style type="text/css">
@@ -159,7 +162,6 @@ PyTorch implementation for NeurIPS2022 paper of [**“A Differentiable Semantic 
 </table>
 
 
-![image](assets/Motivation.png)
 ## Requirements and Installation
 We recommended the following dependencies.
 
