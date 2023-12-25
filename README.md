@@ -1,6 +1,164 @@
 ## Introduction
 PyTorch implementation for NeurIPS2022 paper of [**“A Differentiable Semantic Metric Approximation in Probabilistic Embedding for Cross-Modal Retrieval”**](https://proceedings.neurips.cc/paper_files/paper/2022/file/4e786a87e7ae249de2b1aeaf5d8fde82-Paper-Conference.pdf).  It is built on top of the [SGRAF](https://github.com/Paranioar/SGRAF) in PyTorch. 
 
+#### The full experiment results
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-pb0m{border-color:inherit;text-align:center;vertical-align:bottom}
+.tg .tg-lboi{border-color:inherit;text-align:left;vertical-align:middle}
+.tg .tg-9wq8{border-color:inherit;text-align:center;vertical-align:middle}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-lboi" rowspan="2">Dataset</th>
+    <th class="tg-9wq8" rowspan="2">Model</th>
+    <th class="tg-pb0m" colspan="5">image-to-text</th>
+    <th class="tg-pb0m" colspan="5">text-to-image</th>
+  </tr>
+  <tr>
+    <th class="tg-pb0m">R@1</th>
+    <th class="tg-pb0m">R@5</th>
+    <th class="tg-pb0m">R@10</th>
+    <th class="tg-pb0m">PMRP</th>
+    <th class="tg-pb0m">ASP</th>
+    <th class="tg-pb0m">R@1</th>
+    <th class="tg-pb0m">R@5</th>
+    <th class="tg-pb0m">R@10</th>
+    <th class="tg-pb0m">PMRP</th>
+    <th class="tg-pb0m">ASP</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-lboi" rowspan="3">Flickr30K</td>
+    <td class="tg-pb0m">SAF</td>
+    <td class="tg-pb0m">73.9</td>
+    <td class="tg-pb0m">93.0</td>
+    <td class="tg-pb0m">96.2</td>
+    <td class="tg-pb0m">-</td>
+    <td class="tg-pb0m">65.0</td>
+    <td class="tg-pb0m">56.9</td>
+    <td class="tg-pb0m">81.9</td>
+    <td class="tg-pb0m">87.9</td>
+    <td class="tg-pb0m">-</td>
+    <td class="tg-pb0m">58.4</td>
+  </tr>
+  <tr>
+    <td class="tg-pb0m">SGR</td>
+    <td class="tg-pb0m">73.8</td>
+    <td class="tg-pb0m">92.9</td>
+    <td class="tg-pb0m">96.3</td>
+    <td class="tg-pb0m">-</td>
+    <td class="tg-pb0m">65.5</td>
+    <td class="tg-pb0m">56.6</td>
+    <td class="tg-pb0m">80.7</td>
+    <td class="tg-pb0m">84.9</td>
+    <td class="tg-pb0m">-</td>
+    <td class="tg-pb0m">59.0</td>
+  </tr>
+  <tr>
+    <td class="tg-pb0m">SGRAF</td>
+    <td class="tg-pb0m">78.0</td>
+    <td class="tg-pb0m">94.2</td>
+    <td class="tg-pb0m">97.6</td>
+    <td class="tg-pb0m">-</td>
+    <td class="tg-pb0m">65.8</td>
+    <td class="tg-pb0m">59.9</td>
+    <td class="tg-pb0m">83.4</td>
+    <td class="tg-pb0m">89.2</td>
+    <td class="tg-pb0m">-</td>
+    <td class="tg-pb0m">59.2</td>
+  </tr>
+  <tr>
+    <td class="tg-lboi" rowspan="3">MSCOCO 1K</td>
+    <td class="tg-pb0m">SAF</td>
+    <td class="tg-pb0m">78.0</td>
+    <td class="tg-pb0m">95.6</td>
+    <td class="tg-pb0m">98.4</td>
+    <td class="tg-pb0m">47.1</td>
+    <td class="tg-pb0m">67.2</td>
+    <td class="tg-pb0m">62.8</td>
+    <td class="tg-pb0m">89.8</td>
+    <td class="tg-pb0m">95.2</td>
+    <td class="tg-pb0m">48.7</td>
+    <td class="tg-pb0m">61.6</td>
+  </tr>
+  <tr>
+    <td class="tg-pb0m">SGR</td>
+    <td class="tg-pb0m">78.0</td>
+    <td class="tg-pb0m">95.8</td>
+    <td class="tg-pb0m">98.6</td>
+    <td class="tg-pb0m">46.4</td>
+    <td class="tg-pb0m">68.5</td>
+    <td class="tg-pb0m">62.6</td>
+    <td class="tg-pb0m">88.8</td>
+    <td class="tg-pb0m">93.7</td>
+    <td class="tg-pb0m">48.6</td>
+    <td class="tg-pb0m">62.8</td>
+  </tr>
+  <tr>
+    <td class="tg-pb0m">SGRAF</td>
+    <td class="tg-pb0m">80.2</td>
+    <td class="tg-pb0m">96.4</td>
+    <td class="tg-pb0m">98.8</td>
+    <td class="tg-pb0m">48.1</td>
+    <td class="tg-pb0m">68.3</td>
+    <td class="tg-pb0m">65.0</td>
+    <td class="tg-pb0m">90.7</td>
+    <td class="tg-pb0m">95.8</td>
+    <td class="tg-pb0m">49.6</td>
+    <td class="tg-pb0m">62.7</td>
+  </tr>
+  <tr>
+    <td class="tg-lboi" rowspan="3">MSCOCO 5K</td>
+    <td class="tg-pb0m">SAF</td>
+    <td class="tg-pb0m">56.2</td>
+    <td class="tg-pb0m">83.5</td>
+    <td class="tg-pb0m">90.9</td>
+    <td class="tg-pb0m">35.7</td>
+    <td class="tg-pb0m">67.0</td>
+    <td class="tg-pb0m">40.5</td>
+    <td class="tg-pb0m">70.1</td>
+    <td class="tg-pb0m">80.7</td>
+    <td class="tg-pb0m">36.6</td>
+    <td class="tg-pb0m">61.4</td>
+  </tr>
+  <tr>
+    <td class="tg-pb0m">SGR</td>
+    <td class="tg-pb0m">56.5</td>
+    <td class="tg-pb0m">84.1</td>
+    <td class="tg-pb0m">91.1</td>
+    <td class="tg-pb0m">35.3</td>
+    <td class="tg-pb0m">68.4</td>
+    <td class="tg-pb0m">40.8</td>
+    <td class="tg-pb0m">70.2</td>
+    <td class="tg-pb0m">80.4</td>
+    <td class="tg-pb0m">36.9</td>
+    <td class="tg-pb0m">62.6</td>
+  </tr>
+  <tr>
+    <td class="tg-pb0m">SGRAF</td>
+    <td class="tg-pb0m">60.0</td>
+    <td class="tg-pb0m">86.4</td>
+    <td class="tg-pb0m">92.4</td>
+    <td class="tg-pb0m">36.6</td>
+    <td class="tg-pb0m">68.2</td>
+    <td class="tg-pb0m">43.5</td>
+    <td class="tg-pb0m">72.3</td>
+    <td class="tg-pb0m">82.5</td>
+    <td class="tg-pb0m">37.5</td>
+    <td class="tg-pb0m">62.5</td>
+  </tr>
+</tbody>
+</table>
+
+
 ![image](assets/Motivation.png)
 ## Requirements and Installation
 We recommended the following dependencies.
